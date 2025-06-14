@@ -4,7 +4,7 @@
 // Кожен елемент масиву потрібно записати з нового рядка, використовуючи переноси рядків \r\n. Кодування файлу — UTF-8, для запису використовуйте прапор w.
 
 const fs = require('fs');
-exports.createTxtFile = (contentFile) => {
+module.exports = (contentFile) => {
     fs.writeFile(
         __dirname + "/file_04.txt",
         Array.isArray(contentFile) ? contentFile.join('\r\n') : contentFile.toString(),

@@ -6,9 +6,18 @@
 
 const fs = require('fs');
 
-module.exports = (folderName = __dirname + "/test_folder") => {
+module.exports = (folderName) => {
     if (!fs.existsSync(folderName)) {
         return 0;
     }
-    return fs.readdirSync(folderName).length;
+    let fileCount = 0;
+
+    fs.readdirSync(folderName).forEach((file) => {
+        const filePath = `${folderName}/${file}`;
+        if (fs.statSync(filePath).isFile()) {
+            fileCount++;
+        }
+    })
+
+    return fileCount;
 }

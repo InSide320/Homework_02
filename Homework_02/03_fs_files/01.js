@@ -5,8 +5,8 @@
 // Приклад аргумента: 'test.file'
 
 const fs = require('fs');
-module.exports = (fileName = __dirname + "/test.file") => {
-    if(!fs.existsSync(fileName)){
+module.exports = (fileName) => {
+    if (!fs.existsSync(fileName)) {
         return "";
     }
     return fs.readFileSync(fileName).toString();

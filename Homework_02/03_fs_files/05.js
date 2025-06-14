@@ -6,7 +6,7 @@
 // Якщо вхідного файла немає, то виконання завершується (return;)
 
 const fs = require('fs');
-exports.copyFileContent = async (inputFile, outputFile) => {
+module.exports = async (inputFile, outputFile) => {
     return new Promise((resolve, reject) => {
         if (!fs.existsSync(inputFile)) {
             resolve(`The file ${inputFile} does not exist.`);

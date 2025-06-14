@@ -1,7 +1,8 @@
 const firstTask = require("./01.js");
 
 // Task 01
-console.log("01.js:\n" + firstTask("test_folder"));
+console.log("01.js:\n" + firstTask(__dirname + "/test_folder"));
+console.log("01.js:\n" + firstTask(""));
 console.log("\n");
 // Task 02
 const secondTask = require("./02.js");

@@ -25,8 +25,8 @@ module.exports = (folderName) => {
     }
 
     return files.map(file => {
-        const ext = path.extname(file);
-        const name = path.basename(file, ext);
+        const ext = path.extname(file).slice(1);
+        const name = path.basename(file).replace(`.${ext}`, '');
         return {name: name, ext: ext};
     })
 }

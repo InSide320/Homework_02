@@ -7,7 +7,7 @@
 
 const fs = require('fs');
 
-module.exports = async (fileName = __dirname + "/num.dat") => {
+module.exports = async (fileName) => {
     return new Promise((resolve, reject) => {
         if (!fs.existsSync(fileName)) {
             resolve(0);
